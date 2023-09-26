@@ -1,20 +1,51 @@
+import { useState } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import CartSidebar from "./CartSidebar";
 
 const MyNavar = () => {
+  const navigate = useNavigate();
+
+  const logout = () => {
+    localStorage.setItem("token", "");
+    navigate("/login");
+  }
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
-    <div>
-      <Navbar bg="primary" data-bs-theme="dark">
+    <>
+      <Navbar
+        bg="primary"
+        data-bs-theme="dark"
+        expand="lg"
+        className="bg-body-tertiary"
+      >
         <Container>
-          <Navbar.Brand as={Link}to="/" >News App</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link as={Link} to="/login" >Login</Nav.Link>
-            <Nav.Link as={Link} to="/favorites" >Favorites</Nav.Link>
-            <Nav.Link >Favorites (SIDE BAR)</Nav.Link>
-          </Nav>
+          <Navbar.Brand as={Link} to="/" href="#home">
+            HOME
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link as={Link} to="/login">
+                Login
+              </Nav.Link>
+              <Nav.Link as={Link} to="/favorites">
+                Purchases
+              </Nav.Link>
+              <Nav.Link onClick={handleShow}><i className="fa-solid fa-cart-shopping"></i></Nav.Link>
+              <Nav.Link onClick={logout}>Logout</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
         </Container>
       </Navbar>
-    </div>
+      <CartSidebar show={show} handleClose={handleClose} />
+      
+    </>
   );
 };
 

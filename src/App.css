@@ -1,0 +1,17 @@
+.relatedProducts{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+}
+
+.relatedLink{
+    text-decoration: none;
+}
+
+.img-home{
+    object-fit: contain;
+    height: 300px;
+}
+
+
