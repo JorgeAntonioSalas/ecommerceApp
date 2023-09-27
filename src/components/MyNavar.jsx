@@ -9,7 +9,7 @@ const MyNavar = () => {
   const logout = () => {
     localStorage.setItem("token", "");
     navigate("/login");
-  }
+  };
 
   const [show, setShow] = useState(false);
 
@@ -32,19 +32,22 @@ const MyNavar = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link as={Link} to="/login">
-                Login
+                Account <i className="fa-solid fa-user"></i>
               </Nav.Link>
               <Nav.Link as={Link} to="/favorites">
-                Purchases
+                Purchases  <i className="fa-solid fa-clock-rotate-left"></i>
               </Nav.Link>
-              <Nav.Link onClick={handleShow}><i className="fa-solid fa-cart-shopping"></i></Nav.Link>
-              <Nav.Link onClick={logout}>Logout</Nav.Link>
+              <Nav.Link onClick={handleShow}>
+                Cart <i className="fa-solid fa-cart-shopping"></i>
+              </Nav.Link>
+              <Nav.Link onClick={logout}>
+                Exit <i className="fa-solid fa-right-from-bracket"></i>
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
       <CartSidebar show={show} handleClose={handleClose} />
-      
     </>
   );
 };
