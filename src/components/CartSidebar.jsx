@@ -12,9 +12,10 @@ const CartSidebar = ({show, handleClose}) => {
 
   useEffect(()=> {
     dispatch(getCartThunk());
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[])
 
-  console.log(cartProducts);
+  // console.log(cartProducts);
 
   const purchaseCart= ()=> {
     dispatch(purchaseCartThunk());
@@ -34,7 +35,7 @@ const CartSidebar = ({show, handleClose}) => {
                 </ListGroup.Item>)
             }
           </ListGroup>
-          <button onClick={purchaseCart}>Purchase</button>
+          <button onClick={purchaseCart}>Purchase <i className="fa-regular fa-square-check"></i></button>
         </Offcanvas.Body>
       </Offcanvas>
     );

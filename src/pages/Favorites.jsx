@@ -57,7 +57,7 @@ const Favorites = () => {
                             <Col md={2}>{new Date(po.createdAt).toLocaleString(undefined, dateOptions)}</Col>
                             <Col md={1}>{po.id}</Col>
                             <Col md={2}>{po.product.title}</Col>
-                            <Col md={1}><Image src={po.product.images[2].url} fluid /></Col>
+                            <Col md={1}><Image src={po.product.images[0].url} fluid /></Col>
                             <Col md={1}></Col>
                             <Col md={2}>{po.product.price}</Col>
                             <Col md={1}>{po.quantity}</Col>

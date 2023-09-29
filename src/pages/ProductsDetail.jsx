@@ -38,7 +38,7 @@ const ProductsDetail = () => {
 
   // funcion para agregar productos al carro de compras
   const addProduct = ()=> {
-    alert('Agregando '+quantity+' productos al carrito')
+    // alert('Agregando '+quantity+' productos al carrito')
     const product= {
       "quantity": quantity,
       "productId": id,

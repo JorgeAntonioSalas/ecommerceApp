@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import ProductsDetail from "./pages/ProductsDetail";
@@ -25,7 +25,7 @@ function App() {
 
   return (
     <div>
-      <BrowserRouter>
+      <HashRouter>
       <MyNavbar />
         {isLoading && <LoadingScreen/>}
         <Container className="mt-5">
@@ -38,7 +38,7 @@ function App() {
           <Route path="/login" element={<Login />} />
         </Routes>
         </Container>
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
