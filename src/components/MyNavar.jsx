@@ -35,7 +35,7 @@ const MyNavar = () => {
                 Account <i className="fa-solid fa-user"></i>
               </Nav.Link>
               <Nav.Link as={Link} to="/favorites">
-                Purchases  <i className="fa-solid fa-clock-rotate-left"></i>
+                Purchase History  <i className="fa-solid fa-clock-rotate-left"></i>
               </Nav.Link>
               <Nav.Link onClick={handleShow}>
                 Cart <i className="fa-solid fa-cart-shopping"></i>

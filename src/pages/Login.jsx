@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import '../styles/Login.css'
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
@@ -29,6 +30,11 @@ const Login = () => {
   return (
     <div>
       <h1>LOGIN</h1>
+      <div className="test-credentials"> 
+        <h4>test credentials</h4>
+        <p>user: jorgesalas@gmail.com</p>
+        <p>password: jorge1234</p>
+      </div>
       <Form onSubmit={handleSubmit(submit)}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
